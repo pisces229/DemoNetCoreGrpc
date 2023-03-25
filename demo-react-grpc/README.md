@@ -1,5 +1,9 @@
 # Demo React gRPC 
 
+##  Marketplace
+
+[vscode-proto3](https://marketplace.visualstudio.com/items?itemName=zxh404.vscode-proto3)
+
 ## create-react-app
 
 `npx create-react-app <name> --template typescript`
