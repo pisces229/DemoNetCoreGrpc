@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcWebServer";
+
+package runner;
+
+service Runner {
+  rpc Run (RunnerRequest) returns (RunnerResponse) {}
+  rpc ServerStreaming (RunnerRequest) returns (stream RunnerResponse) {}
+}
+
+message RunnerRequest {
+  string message = 1;
+}
+
+message RunnerResponse {
+  string message = 1;
+}
