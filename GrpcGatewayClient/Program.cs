@@ -17,7 +17,7 @@ using var channel = GrpcChannel.ForAddress("https://localhost:50443");
 //using var httpClient = new HttpClient() { BaseAddress = new Uri("http://localhost:51080") };
 using var httpClient = new HttpClient() { BaseAddress = new Uri("https://localhost:51443") };
 
-var runnerService = new RunnerService(channel, httpClient);
+var runnerService = new RunnerService(loggerFactory.CreateLogger<RunnerService>(), channel, httpClient);
 
 await runnerService.GrpcRunGet();
 await runnerService.GrpcRunPost();

@@ -15,7 +15,7 @@ using var loggerFactory = LoggerFactory.Create(builder =>
 using var channel = GrpcChannel.ForAddress("http://localhost:50080");
 //using var channel = GrpcChannel.ForAddress("https://localhost:50443");
 
-var runnerService = new RunnerService(channel);
+var runnerService = new RunnerService(loggerFactory.CreateLogger<RunnerService>(), channel);
 
 //await runnerService.Run();
 await runnerService.ServerStreaming();
